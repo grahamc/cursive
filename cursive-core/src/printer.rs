@@ -424,17 +424,17 @@ impl<'a, 'b> Printer<'a, 'b> {
         let size = size - (1, 1);
 
         self.with_high_border(invert, |s| {
-            s.print(start, "┌");
-            s.print(start + size.keep_y(), "└");
-            s.print_hline(start + (1, 0), size.x - 1, "─");
-            s.print_vline(start + (0, 1), size.y - 1, "│");
+            s.print(start, " ");
+            s.print(start + size.keep_y(), " ");
+            s.print_hline(start + (1, 0), size.x - 1, " ");
+            s.print_vline(start + (0, 1), size.y - 1, " ");
         });
 
         self.with_low_border(invert, |s| {
-            s.print(start + size.keep_x(), "┐");
-            s.print(start + size, "┘");
-            s.print_hline(start + (1, 0) + size.keep_y(), size.x - 1, "─");
-            s.print_vline(start + (0, 1) + size.keep_x(), size.y - 1, "│");
+            s.print(start + size.keep_x(), " ");
+            s.print(start + size, " ");
+            s.print_hline(start + (1, 0) + size.keep_y(), size.x - 1, " ");
+            s.print_vline(start + (0, 1) + size.keep_x(), size.y - 1, " ");
         });
     }
 

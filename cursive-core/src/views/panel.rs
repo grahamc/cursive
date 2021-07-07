@@ -75,8 +75,8 @@ impl<V> Panel<V> {
                     .title_position
                     .get_offset(len, printer.size.x - spacing_both_ends);
             printer.with_high_border(false, |printer| {
-                printer.print((x - 2, 0), "┤ ");
-                printer.print((x + len, 0), " ├");
+                printer.print((x - 2, 0), "  ");
+                printer.print((x + len, 0), "  ");
             });
 
             printer.with_color(ColorStyle::title_primary(), |p| {

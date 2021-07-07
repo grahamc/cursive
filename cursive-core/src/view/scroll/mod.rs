@@ -228,7 +228,7 @@ pub fn draw_frame<T, LeftBorder, TopBorder, RightBorder, BottomBorder>(
     printer.print_vline(
         (size.x, viewport.bottom() + 2),
         scrollbar_size.y,
-        "│",
+        "|",
     );
 
     for (i, y) in (viewport.top()..=viewport.bottom()).enumerate() {
@@ -236,10 +236,10 @@ pub fn draw_frame<T, LeftBorder, TopBorder, RightBorder, BottomBorder>(
         right_border(scroller, &printer.offset((size.x, i + 1)), y);
     }
 
-    printer.print((0, 0), "┌");
-    printer.print(size.keep_y(), "└");
-    printer.print(size.keep_x(), "┐");
-    printer.print(size, "┘");
+    printer.print((0, 0), " ");
+    printer.print(size.keep_y(), " ");
+    printer.print(size.keep_x(), " ");
+    printer.print(size, " ");
 }
 
 /// Draws a box-style frame around a scrollable content.
@@ -263,30 +263,30 @@ pub fn draw_box_frame<T, IsHDelim, IsVDelim>(
         printer,
         |s, printer, y| {
             if is_h_delim(s, y) {
-                printer.print((0, 0), "├");
+                printer.print((0, 0), " ");
             } else {
-                printer.print((0, 0), "│");
+                printer.print((0, 0), " ");
             }
         },
         |s, printer, x| {
             if is_v_delim(s, x) {
-                printer.print((0, 0), "┬");
+                printer.print((0, 0), " ");
             } else {
-                printer.print((0, 0), "─");
+                printer.print((0, 0), " ");
             }
         },
         |s, printer, y| {
             if is_h_delim(s, y) {
-                printer.print((0, 0), "┤");
+                printer.print((0, 0), " ");
             } else {
-                printer.print((0, 0), "│");
+                printer.print((0, 0), " ");
             }
         },
         |s, printer, x| {
             if is_v_delim(s, x) {
-                printer.print((0, 0), "┴");
+                printer.print((0, 0), " ");
             } else {
-                printer.print((0, 0), "─");
+                printer.print((0, 0), " ");
             }
         },
     );
